@@ -3,7 +3,7 @@ public class WholeNumbers {
         int numberOfFans = 5000;
         System.out.println("There are " + numberOfFans + " fans at the Quidditch games.");
 
-        int globalPopulation = 3000000000;
+        long globalPopulation = 3000000000L;
         System.out.println("There are " + globalPopulation + " people on earth.");
     }
 }
