@@ -11,8 +11,18 @@ public class SignUp {
         //Task 1 - Using Scanner, ask the user questions
 
         //Ask for their first name.
+        System.out.println("\nWhat is your first name?");
+        String firstName = scan.nextLine();
         //Ask for their last name.
+        System.out.println("\nWhat is your last name?");
+        String lastName = scan.nextLine();
         //Ask: how old are you?
+        System.out.println("\nHow old are you?");
+        int age = scan.nextInt();
+
+        scan.nextLine();
+        System.out.println("\nWhat's your username?");
+        String username = scan.nextLine();
         /* Ask them to make a username. SIDE NOTE:
            – nextLine() gets "skipped" if you put it ahead of nextInt() , nextDouble(), nextLong().
            – You will understand why this happens when we cover Delimiters in the next section (Booleans and Conditionals).
@@ -24,7 +34,7 @@ public class SignUp {
 
         //Task 2 - Print their information. 
 
-        System.out.println("Thank you for joining JavaGram!");
+        System.out.println("\nThank you for joining JavaGram!");
 
         //Print their information like so:
 
