@@ -40,7 +40,7 @@ public class Calendar {
                 System.out.println("I'm free!!");
                 break;
             default:
-                System.out.println("That's not at day.");    
+                System.out.println("That's not a day.");    
         }
         
 
