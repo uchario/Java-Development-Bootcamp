@@ -11,6 +11,12 @@ public class JavaMart {
 
         //else:  Sorry, I only have <wallet> left.
 
+        if (wallet >= toyCar) {
+            System.out.println("Sure! pay for the toy car.");
+        } else {
+            System.out.println("Sory, I only have " + wallet + " left.");
+        }
+
         
         double nike = 95.99;       //run test case with 89.99
         System.out.println("Can I get these nike shoes?");
@@ -20,5 +26,10 @@ public class JavaMart {
 
         //else: Sorry, I only have <wallet> left.
 
-    }
+        if (wallet >= nike) {
+            System.out.println("Sure! pay for the nike shoes.");
+        } else {
+            System.out.println("Sory, I only have " + (wallet - toyCar) + " left.");
+        }
+    } 
 }
