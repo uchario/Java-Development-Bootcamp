@@ -8,7 +8,7 @@ public class WorkSchedule {
         // otherwise, print: "Wake up at 7:00 :( ";
         if (holiday) {
             System.out.println("Wohoo, no work!");
-        } else if (day == 7) {
+        } else if (day ==6 || day == 7) {
             System.out.println("It's the weekend, no work!");
         } else {
             System.out.println("Wake up at 7:00 :( ");
