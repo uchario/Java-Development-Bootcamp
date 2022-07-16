@@ -12,9 +12,24 @@ public class SignIn {
         System.out.println("\nWelcome to Javagram! Sign in below\n");
         System.out.print("• Username: ");
         //pick up username
+        String enteredName = scan.nextLine();
         System.out.print("• Password: ");
         //pick up password
+        String enteredPassword = scan.nextLine();
 
+        while (!enteredName.equals(username) || !enteredPassword.equals(password)) {
+            System.out.println("\nIncorrect, please try again!\n");
+
+            System.out.print("• Username: ");
+            //pick up username
+            enteredName = scan.nextLine();
+           
+            System.out.print("• Password: ");
+            //pick up password
+            enteredPassword = scan.nextLine();
+        }
+
+        System.out.println("\nSign in successful. Welcome!");
         /* Task 2 
             1. Set up a loop that keeps running while the username OR password is incorrect. 
                When they get it wrong:
