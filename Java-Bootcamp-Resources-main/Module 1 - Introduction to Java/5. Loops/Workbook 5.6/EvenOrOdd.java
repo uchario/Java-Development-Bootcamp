@@ -8,6 +8,12 @@ public class EvenOrOdd {
             2. If the number is odd, print ' – odd' beside the number.
 
          */
-
+        for (int i = 0; i <= 19; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i + " - even");
+            } else {
+                System.out.println(i + " - odd");
+            }
+        }
     }
 }
