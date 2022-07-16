@@ -8,6 +8,8 @@ public class JavaRolls {
               1. print: Let's play Rolling Java. Type anything to start.
               2. Get the user to enter any value
         */
+        System.out.println("Let's play Rolling Java. Type anything to start");
+        scan.nextLine();
 
         /* Task 2: 
               1. Once the user is ready, print: 
@@ -18,6 +20,13 @@ public class JavaRolls {
                     You must collect at least 3 points to win. Enter anything to roll:
               2. Get the user to enter any value
         */
+        System.out.println("Great, here are the rules: \n");
+        System.out.println(" - If you roll a 6 the game stops.");
+        System.out.println(" - If you roll a 4 nothing happens.");
+        System.out.println(" - Otherwise, you get 1 point.\n");
+        System.out.println("You must colect at least 3 points to win. Enter anything to roll:");
+
+        scan.nextLine();
 
        int score = 0;
       
@@ -45,7 +54,22 @@ public class JavaRolls {
               2. print: One point. Keep rolling. 
 
        */
+        while (true) {
+          scan.nextLine();
+          int randomNumber = rollDice();
 
+          System.out.println("You rolled a "+ randomNumber);
+
+          if (randomNumber == 6) {
+            System.out.println("End of game");
+            break;
+          } else if (randomNumber == 4) {
+            System.out.println("Zero points. Keep rolling");
+          } else {
+            score++;
+            System.out.println("One point. Keep rolling");
+          }
+        }
       
       /* Task 7
       
@@ -58,7 +82,14 @@ public class JavaRolls {
               Otherwise, print:
                   Tough luck, you lose :( 
       */
+      System.out.println("\nYour score is: " + score);
 
+      if (score >= 3) {
+        System.out.println("Wow, that's lucky. You win!");
+      } else {
+        System.out.println("Tough luck, you lose :(");
+      }
+      scan.close();
     }
   
   
@@ -67,6 +98,9 @@ public class JavaRolls {
      * @return randomNumber (int)
      * 
      */ 
-  
+    public static int rollDice() {
+      int randomNumber = (int)((Math.random() * 6) + 1);
+      return randomNumber;
+    }
   
 }
