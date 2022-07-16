@@ -18,6 +18,13 @@ public class CountingTool {
 
         */
 
+        System.out.print("Hi Timmy! Choose a number to count to: ");
+        int line = scan.nextInt();
+
+        for (int i = 0; i <= line; i++) {
+            System.out.print(i + " ");
+        }
+
         scan.close();
     }
 }
