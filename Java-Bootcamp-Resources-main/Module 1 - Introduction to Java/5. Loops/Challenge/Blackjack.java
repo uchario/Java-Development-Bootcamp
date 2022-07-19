@@ -10,17 +10,25 @@ public class Blackjack {
         System.out.println("We shall see..");
         System.out.println("..Ready? Press anything to begin!");
         //Task 3 – Wait for the user to press enter.
+        scan.nextLine();
         //Task 4 – Get two random cards.
         //       – Print them: \n You get a \n" + <randomCard> + "\n and a \n" + <randomCard>
-
+        int card1 = drawRandomCard();
+        int card2 = drawRandomCard();
+        System.out.println("\n You get a \n" + cardString(card1) + "\n and a \n" + cardString(card2));
         //Task 5 – Print the sum of your hand value.
         //       – print: your total is: <hand value>
-
+        int handValue = card1 + card2;
+        System.out.println("Your total is: " + handValue);
         
         //Task 6 – Get two random cards for the dealer.
         //       – Print: The dealer shows \n" + <first card> + "\nand has a card facing down \n" + <facedown card>
         //       – Print: \nThe dealer's total is hidden
-
+        int dealerCard1 = drawRandomCard();
+        int dealerCard2 = drawRandomCard();
+        System.out.println("\nThe dealer shows \n" + cardString(dealerCard1) + "\nand has a card facing down \n" + faceDown()); 
+        int dealerTotal = dealerCard1 + dealerCard2;
+        System.out.println("\nThe dealer's total is hidden");
        
         //Task 8 – Keep asking the player to hit or stay (while loop).
         //       1. Every time the player hits
@@ -30,10 +38,47 @@ public class Blackjack {
         //             - print: your new total is <total>
 
         //       2. Once the player stays, break the loop. 
+        while (true) {
+            String selectedOption = hitOrStay();
 
+            if (selectedOption.equalsIgnoreCase("stay")) {
+                break;
+            }
+            
+            int selectedCard = drawRandomCard();
+            handValue += selectedCard;
+            System.out.println("\nYou get a\n" + cardString(selectedCard));
+            System.out.println("Your new total is " + handValue);
+
+            if (handValue > 21) {
+                System.out.println("Bust! Player loses");
+                break;
+            }
+        }
         
         //For tasks 9 to 13, see the article: Blackjack Part II. 
-         scan.close();
+        System.out.println("\nDealers's turn");
+        System.out.println("\nThe dealer's cards are:\n" + dealerCard1 + "\n\n" + dealerCard2);
+        
+        while (dealerTotal < 17) {
+            int newCard = drawRandomCard();
+
+            dealerTotal += newCard;
+            System.out.println("\nDealer gets a \n" + cardString(newCard));
+            System.out.println("Dealer's total is: " + dealerTotal);
+        }
+        
+        if (dealerTotal > 21) {
+            System.out.println("Bust! Dealer loses.");
+            System.exit(0);
+        }
+
+        if (handValue > dealerTotal) {
+            System.out.println("\nPlayer wins!");
+        } else {
+            System.out.println("\nDealer wins!");
+        }
+        scan.close();
 
     }
 
@@ -45,6 +90,12 @@ public class Blackjack {
      *   1. Gets a random number between 1 and 13.
      *   2. Returns a card.
      */
+    public static int drawRandomCard() {
+        double randomNumber = Math.random() * 13;
+        randomNumber += 1;
+        int randomInt = (int) randomNumber;
+        return randomInt;
+    }
 
     /** Task 2 – make a function that returns a String drawing of the card.
      * Function name – cardString
@@ -54,6 +105,103 @@ public class Blackjack {
      * Inside the function:
      *   1. Returns a String drawing of the card.
      */
+    public static String cardString(int cardNumber) {
+        switch (cardNumber) {
+            case 1:
+                return  "   _____\n"+
+                        "  |A _  |\n"+ 
+                        "  | ( ) |\n"+
+                        "  |(_'_)|\n"+
+                        "  |  |  |\n"+
+                        "  |____V|\n";
+            case 2:
+                return  "   _____\n"+              
+                        "  |2    |\n"+ 
+                        "  |  o  |\n"+
+                        "  |     |\n"+
+                        "  |  o  |\n"+
+                        "  |____Z|\n";
+            case 3:
+                return  "   _____\n" +
+                        "  |3    |\n"+
+                        "  | o o |\n"+
+                        "  |     |\n"+
+                        "  |  o  |\n"+
+                        "  |____E|\n";
+            case 4:
+                return  "   _____\n" +
+                        "  |4    |\n"+
+                        "  | o o |\n"+
+                        "  |     |\n"+
+                        "  | o o |\n"+
+                        "  |____h|\n";
+            case 5:
+                return  "   _____ \n" +
+                        "  |5    |\n" +
+                        "  | o o |\n" +
+                        "  |  o  |\n" +
+                        "  | o o |\n" +
+                        "  |____S|\n";
+            case 6:
+                return  "   _____ \n" +
+                        "  |6    |\n" +
+                        "  | o o |\n" +
+                        "  | o o |\n" +
+                        "  | o o |\n" +
+                        "  |____6|\n";
+            case 7:
+                return  "   _____ \n" +
+                        "  |7    |\n" +
+                        "  | o o |\n" +
+                        "  |o o o|\n" +
+                        "  | o o |\n" +
+                        "  |____7|\n";
+            case 8:
+                return  "   _____ \n" +
+                        "  |8    |\n" +
+                        "  |o o o|\n" +
+                        "  | o o |\n" +
+                        "  |o o o|\n" +
+                        "  |____8|\n";
+            case 9:
+                return  "   _____ \n" +
+                        "  |9    |\n" +
+                        "  |o o o|\n" +
+                        "  |o o o|\n" +
+                        "  |o o o|\n" +
+                        "  |____9|\n";
+            case 10:
+                return  "   _____ \n" +
+                        "  |10  o|\n" +
+                        "  |o o o|\n" +
+                        "  |o o o|\n" +
+                        "  |o o o|\n" +
+                        "  |___10|\n";
+            case 11:
+                return  "   _____\n" +
+                        "  |J  ww|\n"+ 
+                        "  | o {)|\n"+ 
+                        "  |o o% |\n"+ 
+                        "  | | % |\n"+ 
+                        "  |__%%[|\n";
+            case 12:
+                return  "   _____\n" +
+                        "  |Q  ww|\n"+ 
+                        "  | o {(|\n"+ 
+                        "  |o o%%|\n"+ 
+                        "  | |%%%|\n"+ 
+                        "  |_%%%O|\n";
+            case 13:
+                return  "   _____\n" +
+                        "  |K  WW|\n"+ 
+                        "  | o {)|\n"+ 
+                        "  |o o%%|\n"+ 
+                        "  | |%%%|\n"+ 
+                        "  |_%%%>|\n";
+            default:
+                return "";
+        }
+    }
 
     public static String faceDown() {
         return
@@ -75,5 +223,15 @@ public class Blackjack {
      *      Please write 'hit' or 'stay'
      *   3. Returns the user's option 
      */
+        public static String hitOrStay() {
+            System.out.println("\nEnter 'hit' or 'stay'");
+            String userOption = scan.nextLine();
+
+            while (!userOption.equalsIgnoreCase("hit") && !userOption.equalsIgnoreCase("stay")) {
+                    System.out.println("Please enter 'hit' or 'stay'");
+                    userOption = scan.nextLine();
+            }
+            return userOption;
+        }
     }
 
