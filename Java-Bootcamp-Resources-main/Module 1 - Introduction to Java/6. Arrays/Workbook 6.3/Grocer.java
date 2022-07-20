@@ -8,7 +8,18 @@ public class Grocer {
 
              Then, use a for loop to print each element in the array. 
         */
- 
+        String[] aisle = {"apples", "bananas", "candy", "chocolate", "coffee", "tea"};
+
+        System.out.println("\nDo you sell coffee?");
+
+        for (int i = 0; i < aisle.length; i++) {
+            if (aisle[i].equals("coffee")) {
+                System.out.println("\nWe have that in aisle: " + i);
+                break;
+            }
+            
+        }
+        
         /* Task 2:
            1. System.out.println("\nDo you sell coffee?");
 
@@ -17,6 +28,8 @@ public class Grocer {
             • if so, break the loop and print: \nWe have that in aisle: <index>
 
         */
+
+    
     
     }
 }
