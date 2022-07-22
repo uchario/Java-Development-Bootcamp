@@ -25,7 +25,7 @@ public class LotteryTickets {
      */
     public static void printTicketNumbers(int[] ticket) {
         for (int i = 0; i < ticket.length; i++) {
-        System.out.print(ticket[i] + " ");
+            System.out.print(ticket[i] + " ");
         }
         System.out.println("\n");
     }
