@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 public class Hangman {
     public static Scanner scan = new Scanner(System.in);
