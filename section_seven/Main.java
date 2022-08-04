@@ -2,21 +2,21 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Car nissan = new Car("Nissag", 5000, 2020, "Blue");
+        Car nissan = new Car("Nissan", 2000, 2020, "Blue");
 
         Car dodge = new Car("Dodge", 10000, 2019, "Red");
 
-        Person uche = new Person();
-        uche.name = "Uchechukwu Ariolu";
-        uche.nationality = "Nigerian";
-        uche.dateOfBirth = "06/11/1005";
+        Person uche = new Person("Uchechukwu Ariolu", "Nigerian", "06/11/1005", 11);
         uche.passport = new String[]{uche.name, uche.nationality, uche.dateOfBirth};
-        uche.seatNumber = 11;
 
-        System.out.println(nissan.make);
-        System.out.println(nissan.price);
-        System.out.println(nissan.year);    
-        System.out.println(nissan.color);
+        nissan.setColor("Jet Black");
+        double newPrice = nissan.getPrice() / 2;
+        nissan.setPrice(newPrice);
+
+        System.out.println(nissan.getMake());
+        System.out.println(nissan.getPrice());
+        System.out.println(nissan.getYear());    
+        System.out.println(nissan.getColor());
 
         System.out.println("\n" + uche.name);
         System.out.println(uche.nationality);
