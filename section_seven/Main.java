@@ -2,18 +2,9 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Car nissan = new Car();
+        Car nissan = new Car("Nissag", 5000, 2020, "Blue");
 
-        nissan.make = "Nissan";
-        nissan.price = 5000;
-        nissan.year = 2020;
-        nissan.color = "Blue";
-
-        Car dodge = new Car();
-        dodge.make = "Dodge";
-        dodge.price = 10000;
-        dodge.year = 2019;
-        dodge.color = "Red";
+        Car dodge = new Car("Dodge", 10000, 2019, "Red");
 
         Person uche = new Person();
         uche.name = "Uchechukwu Ariolu";
