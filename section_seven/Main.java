@@ -16,13 +16,12 @@ public class Main {
 
         System.out.println(Arrays.toString(nissan2.getParts()));
 
-        
-        uche.chooseSeat(); 
-
         if (uche.applyPassport()) {
-            System.out.println("Congratulations " + uche.getName() + " Your passport was approved!");
+            uche.setPassport();
         } else {
-            System.out.println("We're sorry " + uche.getName() + " We cannot process your application");
+            System.out.println("\nWe're sorry " + uche.getName() + " We cannot process your application");
         }
+
+        System.out.println("\nName: " + uche.getName() + "\n" + "Nationality: " + uche.getNationality() + "\n" + "Date of birth: " + uche.getDateOfBirth() + "\n" + "Seat Number: " + uche.getSeatNumber() + "\n" + "Passport: " + Arrays.toString(uche.getPassport()));
     }
 }
