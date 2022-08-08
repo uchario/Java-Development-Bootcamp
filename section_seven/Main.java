@@ -14,7 +14,8 @@ public class Main {
         Car nissan2 = new Car(nissan);
         nissan2.setParts(new String[] {"tires", "filter"});
 
-        System.out.println(Arrays.toString(nissan2.getParts()));
+        System.out.println(nissan);
+        System.out.println(nissan2);
 
         if (uche.applyPassport()) {
             uche.setPassport();
