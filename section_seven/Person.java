@@ -89,4 +89,12 @@ public class Person {
         int randInt = (int) randomNumber + 1;
         this.setSeatNumber(randInt);
     }
+
+    public String toString() {
+        return "\nName: " + this.name + "\n"
+            +  "Nationality: " + this.nationality + "\n"
+            +  "Date of Birth: " + this.dateOfBirth + "\n"
+            +  "Seat Number: " + this.seatNumber + "\n"
+            +  "Passport: " + Arrays.toString(this.passport) + "\n";
+    }
 }
