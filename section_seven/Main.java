@@ -16,13 +16,12 @@ public class Main {
 
         System.out.println(nissan);
         System.out.println(nissan2);
+        System.out.println(uche);
 
         if (uche.applyPassport()) {
             uche.setPassport();
         } else {
             System.out.println("\nWe're sorry " + uche.getName() + " We cannot process your application");
         }
-
-        System.out.println("\nName: " + uche.getName() + "\n" + "Nationality: " + uche.getNationality() + "\n" + "Date of birth: " + uche.getDateOfBirth() + "\n" + "Seat Number: " + uche.getSeatNumber() + "\n" + "Passport: " + Arrays.toString(uche.getPassport()));
     }
 }
