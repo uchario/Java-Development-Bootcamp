@@ -66,4 +66,12 @@ public class Car {
     public void drive() {
         System.out.println("Drive this " + this.make);
     }
+
+    public String toString() {
+        return "\nMake: " + this.make + ".\n"
+            +  "Price: " + this.price + ".\n"
+            +  "Year: " + this.year + ".\n"
+            +  "Color: " + this.color + ".\n"
+            +  "Parts: " + Arrays.toString(this.parts);
+    }
 }
