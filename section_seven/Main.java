@@ -1,22 +1,25 @@
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
-        String[] parts = {"tires", "keys"};
-        Car nissan = new Car("Nissan", 2000, 2020, "Blue", parts);
+        Car[] cars = {
+            new Car("Nissan", 5000, 2020, "red", new String[] {"tires", "keys"}),
+            new Car("Dodge", 8500, 2019, "blue", new String[] {"tires", "keys"}),
+            new Car("Nissan", 6000, 2021, "yellow", new String[] {"tires", "filter"})
+        };
+
+        Dealership dealership = new Dealership();
+
+        for (int i = 0; i < cars.length; i++) {
+            dealership.setCar(cars[i], i);
+        }
+
+        dealership.getCar(0).setColor("blue");
+        
+        for (int i = 0; i < cars.length; i++) {
+            System.out.println(dealership.getCar(0));
+        }
+       
 
         Person uche = new Person("Uchechukwu Ariolu", "Nigerian", "06/11/1005", 11);
-        //uche.passport = new String[]{uche.name, uche.nationality, uche.dateOfBirth};
-
-        nissan.setColor("Jet Black");
-        double newPrice = nissan.getPrice() / 2;
-        nissan.setPrice(newPrice);
-        Car nissan2 = new Car(nissan);
-        nissan2.setParts(new String[] {"tires", "filter"});
-
-        System.out.println(nissan);
-        System.out.println(nissan2);
-        System.out.println(uche);
 
         if (uche.applyPassport()) {
             uche.setPassport();
