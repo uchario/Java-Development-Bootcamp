@@ -12,7 +12,9 @@ public class Main {
             dealership.setCar(cars[i], i);
         }
 
-        dealership.getCar(0).setColor("blue");
+        Car newCar = dealership.getCar(0);
+        newCar.setColor("blue");
+        System.out.println(newCar);
         
         for (int i = 0; i < cars.length; i++) {
             System.out.println(dealership.getCar(0));
