@@ -64,7 +64,7 @@ public class Car {
     }
 
     public void drive() {
-        System.out.println("Drive this " + this.make);
+        System.out.println("Drive this " + this.make + " to the nearest exit");
     }
 
     public String toString() {
