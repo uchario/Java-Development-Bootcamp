@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         Car[] cars = {
@@ -49,6 +51,7 @@ public class Main {
         }
        
         dealership.sell(2);
+        System.out.println("\n" + dealership.search("Dodge", 10000));
 
         Person uche = new Person("Uchechukwu Ariolu", "Nigerian", "06/11/1005", 11);
 
