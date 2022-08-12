@@ -49,9 +49,6 @@ public class Main {
         for (int i = 0; i < cars.length; i++) {
             System.out.println(dealership.getCar(0));
         }
-       
-        dealership.sell(2);
-        System.out.println("\n" + dealership.search("Dodge", 10000));
 
         Person uche = new Person("Uchechukwu Ariolu", "Nigerian", "06/11/1005", 11);
 
