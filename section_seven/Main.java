@@ -48,13 +48,14 @@ public class Main {
             System.out.println(dealership.getCar(0));
         }
        
+        dealership.sell(2);
 
         Person uche = new Person("Uchechukwu Ariolu", "Nigerian", "06/11/1005", 11);
 
         if (uche.applyPassport()) {
             uche.setPassport();
         } else {
-            System.out.println("\nWe're sorry " + uche.getName() + " We cannot process your application");
+            System.out.println("\nWe're sorry, " + uche.getName() + " We cannot process your application");
         }
     }
 }
