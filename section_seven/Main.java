@@ -19,7 +19,7 @@ public class Main {
             new Person("Marcus Aurelius", "Rome", "121 AD", 8),
             new Person("Leonidas", "Greece", "540 BC", 9),
             new Person("Sun Tzu", "China", "544 BC", 10),
-            new Person("Hammurabi", "Babylon", "1750 BC", 11)
+            new Person("Hammurabi", "Babylon", "1750 BC", 10)
         };
     
         Airline airline = new Airline();
@@ -28,34 +28,38 @@ public class Main {
             airline.setPerson(people[i]);
         }
 
+        // for (int i = 0; i < people.length; i++) {
+        //     if (i % 2 == 0) {
+        //         continue;
+        //     } else {
+        //         System.out.println(airline.getPerson(i));
+        //     }
+        // }
+
         for (int i = 0; i < people.length; i++) {
-            if (i % 2 == 0) {
-                continue;
-            } else {
-                System.out.println(airline.getPerson(i));
-            }
+            airline.createReservation(people[i]);
         }
 
-        Dealership dealership = new Dealership();
+        // Dealership dealership = new Dealership();
 
-        for (int i = 0; i < cars.length; i++) {
-            dealership.setCar(cars[i], i);
-        }
+        // for (int i = 0; i < cars.length; i++) {
+        //     dealership.setCar(cars[i], i);
+        // }
 
-        Car newCar = dealership.getCar(0);
-        newCar.setColor("blue");
-        System.out.println(newCar);
+        // Car newCar = dealership.getCar(0);
+        // newCar.setColor("blue");
+        // System.out.println(newCar);
         
-        for (int i = 0; i < cars.length; i++) {
-            System.out.println(dealership.getCar(0));
-        }
+        // for (int i = 0; i < cars.length; i++) {
+        //     System.out.println(dealership.getCar(0));
+        // }
 
-        Person uche = new Person("Uchechukwu Ariolu", "Nigerian", "06/11/1005", 11);
+        // Person uche = new Person("Uchechukwu Ariolu", "Nigerian", "06/11/1005", 11);
 
-        if (uche.applyPassport()) {
-            uche.setPassport();
-        } else {
-            System.out.println("\nWe're sorry, " + uche.getName() + " We cannot process your application");
-        }
+        // if (uche.applyPassport()) {
+        //     uche.setPassport();
+        // } else {
+        //     System.out.println("\nWe're sorry, " + uche.getName() + " We cannot process your application");
+        // }
     }
 }
