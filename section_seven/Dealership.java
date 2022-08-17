@@ -1,11 +1,12 @@
-import java.util.Arrays;
-
 public class Dealership {
     private Car[] cars;
 
-    public Dealership() {
-        this.cars = new Car[3];
-        System.out.println(Arrays.toString(this.cars));
+    public Dealership(Car[] cars) {
+        this.cars = new Car[cars.length];
+        for (int i = 0; i < cars.length; i++) {
+            this.cars[i] = new Car(cars[i]);
+        }
+
     }
 
     public void setCar(Car car, int index) {
@@ -38,9 +39,9 @@ public class Dealership {
     public String toString() {
         String temp = "";
         for (int i = 0; i < this.cars.length; i++) {
-            temp += "Parking Spot: " + i + "\n";
+            temp += "\nParking Spot: " + i;
             if (this.cars[i] == null) {
-                temp += "Empty\n";
+                temp += "\nEmpty";
             } else {
                 temp += this.cars[i].toString() + "\n";
             }
