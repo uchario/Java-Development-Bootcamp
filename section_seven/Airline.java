@@ -38,7 +38,7 @@ public class Airline {
                 temp += seats[i].toString();
                 temp += "\n\n";
             } else {
-                temp += "Seat" + (i + 1) + " is empty.";
+                temp += "Seat " + (i + 1) + " is empty.";
                 temp += "\n\n";
             }
         }
