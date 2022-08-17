@@ -39,6 +39,8 @@ public class Main {
         for (int i = 0; i < people.length; i++) {
             airline.createReservation(people[i]);
         }
+        System.out.println("********************** RESERVATIONS COMPLETE! **********************\n");
+        System.out.println(airline);
 
         // Dealership dealership = new Dealership();
 
