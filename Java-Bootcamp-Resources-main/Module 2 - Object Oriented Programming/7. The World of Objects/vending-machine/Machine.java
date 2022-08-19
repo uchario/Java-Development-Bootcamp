@@ -38,4 +38,21 @@ public class Machine {
       }
       return false;
     }
+
+    public String toString() {
+      String temp = "";
+      for (int i = 0; i < this.items.length; i++) {
+         temp += "\t";
+         for (int j = 0; j < this.items[i].length; j++) {
+            if (this.items[i][j] == null) {
+               continue;
+            } else {
+               temp += this.items[i][j].toString() + " ";
+            }
+         }
+         temp += "\n\n";
+      }
+      temp += "\t************************************************";
+      return temp;
+    }
 }
