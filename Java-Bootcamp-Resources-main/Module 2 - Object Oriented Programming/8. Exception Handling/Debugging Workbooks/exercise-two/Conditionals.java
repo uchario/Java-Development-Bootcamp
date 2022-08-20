@@ -2,7 +2,7 @@ public class Conditionals {
     public static void main(String[] args) {
 
         int age = 24;
-        double debt = 4000;
+        double debt = 0;
 
         String creditScore = debt > 0 ? "Good" : "Bad";
         boolean canApply = age < 18;
