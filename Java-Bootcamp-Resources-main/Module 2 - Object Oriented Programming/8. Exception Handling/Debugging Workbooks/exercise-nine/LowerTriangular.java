@@ -8,7 +8,7 @@ public class LowerTriangular {
             {2, 4, 6}
         };
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j <= i; j++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 if (j >= i) {
                     matrix[i][j] = 0;
                 }
