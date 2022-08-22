@@ -15,7 +15,11 @@ public class Dealership {
     }
 
     public Car getCar(int index) {
-        return new Car(this.cars[index]);
+        return this.cars[index] == null ? null : new Car(this.cars[index]);
+    }
+
+    public int getLength() {
+        return this.cars.length;
     }
 
     
@@ -23,6 +27,7 @@ public class Dealership {
         this.cars[index].drive();
         this.cars[index] = null;
     }
+
 
     /**
      * Name: isEmpty
@@ -32,6 +37,13 @@ public class Dealership {
      *   • returns true if there are no more cars.
      * 
      */
+
+     public boolean isEmpty() {
+        if (this.cars.length < 1) {
+            return false;
+        }
+        return true;
+     }
 
      
     public String toString() {
