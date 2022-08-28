@@ -1,8 +1,35 @@
+import models.ContactManager;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.text.ParseException;
+import java.util.Scanner;
+
+import models.Contact;
 public class Main {
+    static ContactManager contactManager = new ContactManager();
     public static void main(String[] args) {
-        
-      
-        
+       try {
+        loadContacts("contacts.txt");
+        System.out.println("Contacts loaded...\n\n");
+        System.out.println(contactManager);
+       } catch (FileNotFoundException e) {
+        System.out.println(e.getMessage());
+       }
+    }
+
+    public static void loadContacts(String fileName) throws FileNotFoundException{
+        FileInputStream fis = new FileInputStream(fileName);
+        Scanner scanFile = new Scanner(fis);
+        while (scanFile.hasNextLine()) {
+            try {
+                Contact contact = new Contact(scanFile.next(), scanFile.next(), scanFile.next());
+                contactManager.addContact(contact);
+            } catch (ParseException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        scanFile.close();
     }
 
     /**
