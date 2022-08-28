@@ -43,12 +43,19 @@ public class Main {
             switch (option) {
                 case "a":
                     System.out.println("Enter the name, phone number and birth date");
+                    
                     System.out.print("Name: ");
                     String addName = scan.nextLine();
                     System.out.print("Phone Number: ");
                     String addPhoneNumber = scan.nextLine();
                     System.out.print("Birth Date: ");
                     String addBirthDate = scan.nextLine();
+
+                    if (addName.isBlank() || addPhoneNumber.isBlank() || addPhoneNumber.length() < 5) {
+                        System.out.println("\nThe input you provided is not valid. Registration failed!");
+                        continue;
+                    }
+
                     try {
                         contactManager.addContact(new Contact(addName, addPhoneNumber, addBirthDate));
                     } catch (ParseException e) {
