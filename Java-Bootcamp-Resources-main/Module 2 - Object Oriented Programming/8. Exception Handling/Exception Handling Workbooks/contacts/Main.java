@@ -13,6 +13,7 @@ public class Main {
         loadContacts("contacts.txt");
         System.out.println("Contacts loaded...\n\n");
         System.out.println(contactManager);
+        manageContacts();
        } catch (FileNotFoundException e) {
         System.out.println(e.getMessage());
        }
@@ -30,6 +31,49 @@ public class Main {
             }
         }
         scanFile.close();
+    }
+
+    public static void manageContacts() {
+        Scanner scan = new Scanner(System.in);
+        while (true) {
+            System.out.println("\nChoose the corresponding option (a, b or c) to achieve the desired objective");
+            System.out.println("a). add or b). remove a contact c). exit");
+            String option = scan .nextLine();
+
+            switch (option) {
+                case "a":
+                    System.out.println("Enter the name, phone number and birth date");
+                    System.out.print("Name: ");
+                    String addName = scan.nextLine();
+                    System.out.print("Phone Number: ");
+                    String addPhoneNumber = scan.nextLine();
+                    System.out.print("Birth Date: ");
+                    String addBirthDate = scan.nextLine();
+                    try {
+                        contactManager.addContact(new Contact(addName, addPhoneNumber, addBirthDate));
+                    } catch (ParseException e) {
+                        System.out.println(e.getMessage());
+                    } finally {
+                        System.out.println("\n\n" + contactManager);
+                    }
+                    
+                    break;
+                case "b":
+                    System.out.println("Who do you intend to remove?");
+                    String removeName = scan.nextLine();
+                    contactManager.removeContact(removeName);
+                    System.out.println("\n\n" + contactManager);
+                    break;
+                case "c":
+                    System.exit(0);
+                    break;
+                default:
+                    scan.close();
+                    System.out.println(contactManager);
+        
+
+            }
+        }
     }
 
     /**
