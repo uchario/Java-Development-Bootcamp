@@ -52,7 +52,7 @@ public class Main {
                     store.action(movieChoice, "return");
                     break;
             }
-            System.out.println("\n\nUPDATED MOVIES\n\n");
+            System.out.println("\n\nUPDATED MOVIES\n\n" + store);
         }
     }
 
