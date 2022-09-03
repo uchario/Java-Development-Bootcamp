@@ -44,17 +44,15 @@ public class Main {
             switch (option) {
                 case "a":
                     store.action(movieChoice, "sell");
-                    System.out.println("\n\nUPDATED MOVIES\n\n");
                     break;
                 case "b":
                     store.action(movieChoice, "rent");
-                    System.out.println("\n\nUPDATED MOVIES\n\n");
                     break;
                 case "c":
                     store.action(movieChoice, "return");
-                    System.out.println("\n\nUPDATED MOVIES\n\n");
                     break;
             }
+            System.out.println("\n\nUPDATED MOVIES\n\n");
         }
     }
 
