@@ -41,6 +41,11 @@ public class Main {
             System.out.print("Enter the name of the movie: ");
             String movieChoice = scan.nextLine();
 
+            if (movieChoice.isBlank()) {
+                System.out.println("\n\nThe input you provided is not valid. Please try again\n");
+                continue;
+            }
+
             switch (option) {
                 case "a":
                     store.action(movieChoice, "sell");
