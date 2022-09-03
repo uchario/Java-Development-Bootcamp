@@ -46,6 +46,11 @@ public class Main {
                 continue;
             }
 
+            if (store.getMovie(movieChoice) == null) {
+                System.out.println("\n\nThe movie is not available. Please try again\n");
+                continue;
+            }
+
             switch (option) {
                 case "a":
                     store.action(movieChoice, "sell");
