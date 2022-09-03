@@ -12,12 +12,16 @@ public class Main {
        
         try {
             loadMovies("movies.txt");
+            System.out.println("MOVIES LOADED\n\n");
             System.out.println(store);
+            manageMovies();
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
+        } finally {
+            System.out.println("\n\nPROCESS COMPLETE\n\n");
         }
 
-        manageMovies();
+       
     }
 
     public static void loadMovies(String fileName) throws FileNotFoundException{
@@ -40,12 +44,15 @@ public class Main {
             switch (option) {
                 case "a":
                     store.action(movieChoice, "sell");
+                    System.out.println("\n\nUPDATED MOVIES\n\n");
                     break;
                 case "b":
                     store.action(movieChoice, "rent");
+                    System.out.println("\n\nUPDATED MOVIES\n\n");
                     break;
                 case "c":
                     store.action(movieChoice, "return");
+                    System.out.println("\n\nUPDATED MOVIES\n\n");
                     break;
             }
         }
