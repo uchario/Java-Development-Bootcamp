@@ -5,6 +5,12 @@ private String name;
 private double price;
 
 public Item(String name, double price) {
+    if (name == null || name.isBlank()) {
+        throw new IllegalArgumentException("name must not be null/blank");
+    }
+    if (price < 0) {
+        throw new IllegalArgumentException("price must be positive");
+    }
     this.name = name;
     this.price = price;
 }
@@ -23,10 +29,16 @@ public double getPrice() {
 }
 
 public void setName(String name) {
+    if (name == null || name.isBlank()) {
+        throw new IllegalArgumentException("name must not be null/blank");
+    }
     this.name = name;
 }
 
 public void setPrice(double price) {
+    if (price < 0) {
+        throw new IllegalArgumentException("price must be positive");
+    }
     this.price = price;
 }
 
