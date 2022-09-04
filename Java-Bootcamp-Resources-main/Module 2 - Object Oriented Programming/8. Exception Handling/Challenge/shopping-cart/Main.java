@@ -1,9 +1,14 @@
+import models.Cart;
+import models.Item;
+import models.Store;
+
 public class Main {
-    
-
     public static void main(String[] args) {
-
-    
+        Item celery = new Item("Celery", 0.99);
+        Item spinach = new Item("Spinach", 0.99);
+        Item coriander = new Item("Coriander", 1.29);
+        
+        System.out.println(celery + "" + spinach + "" + coriander);
     }
 
     /**
