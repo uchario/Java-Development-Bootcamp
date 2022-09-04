@@ -18,6 +18,15 @@ public class Store {
     public String toString() {
         String temp = "";
         for (int i = 0; i < this.items.length; i++) {
+            switch (i) {
+                case 0: temp += "\tDRINKS:        "; break;
+                case 1: temp += "\tCEREAL:        "; break;
+                case 2: temp += "\tDAIRY:         "; break; 
+                case 3: temp += "\tDELI:          "; break; 
+                case 4: temp += "\tGREENS:        "; break; 
+                case 5: temp += "\tCLOTHING:      "; break; 
+                case 6: temp += "\tELECTRONICS:   "; break; 
+            }
             for (int j = 0; j < this.items[i].length; j++) {
                 temp += this.items[i][j].toString();
             }
