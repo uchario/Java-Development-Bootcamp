@@ -26,6 +26,9 @@ public class Cart {
     }
 
     public void remove(String name) {
+        if (this.items.isEmpty()) {
+            throw new IllegalStateException("Cart is empty!");
+        }
         for (int i = 0; i < this.items.size(); i++) {
             if (this.items.get(i).getName().equals(name)) {
                 this.items.remove(this.items.get(i));
@@ -34,6 +37,9 @@ public class Cart {
     }
 
     public String checkout() {
+        if (this.items.isEmpty()) {
+            throw new IllegalStateException("Cart is empty!");
+        }
         double subtotal = 0;
         double tax;
         double total;
