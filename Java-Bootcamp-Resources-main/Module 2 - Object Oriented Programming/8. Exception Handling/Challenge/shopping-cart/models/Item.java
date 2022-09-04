@@ -42,6 +42,17 @@ public void setPrice(double price) {
     this.price = price;
 }
 
+public boolean equals(Object obj) {
+    if (obj == null) {
+        return false;
+    }
+    if (!(obj instanceof Item)) {
+        return false;
+    }
+    Item item = (Item) obj;
+    return item.getName().equals(this.name) && item.getPrice() == this.price;
+}
+
 public String toString() {
     return this.name + ": $" + this.price + " "; 
 }
