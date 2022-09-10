@@ -44,11 +44,18 @@ public class Main {
             switch(option) {
                 case "a":
                     System.out.print("\nChoose an aisle number between: 1 - 7: ");
-                    int row = scan.nextInt() - 1;
+                    int row = scan.hasNextInt() ? scan.nextInt() - 1 : 404;
                     scan.nextLine();
                     System.out.print("Choose an item number between: 1 - 3: ");
-                    int column = scan.nextInt() - 1;
+                    int column = scan.hasNextInt() ? scan.nextInt() - 1 : 404;
                     scan.nextLine();
+
+                    if (row == 404 || column == 404) {
+                        continue;
+                    } else if (row < 0 || row > 6 || column < 0 || column > 6) {
+                        continue;
+                    }
+                    
                     Item item = new Item(store.getItem(row, column));
                     if (!(cart.add(item))) {
                         System.out.println(item.getName() + " is already in your shopping cart");
@@ -57,11 +64,17 @@ public class Main {
                     }
                     break;
                 case "b":
+                    if (cart.isEmpty()) {
+                        continue;
+                    }
                     System.out.print("Enter the item you'd like to remove: ");
                     String removedItem = scan.nextLine();
                     cart.remove(removedItem);
                     break;
                 case "c":
+                    if (cart.isEmpty()) {
+                        continue;
+                    }
                     System.out.println(cart.checkout());
                     scan.close();
                     return;
