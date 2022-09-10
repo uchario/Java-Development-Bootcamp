@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.stream.Collectors;
 public class Map {
 
     static ArrayList<Double> prices = new ArrayList<Double>();
@@ -12,7 +12,11 @@ public class Map {
         prices.add(15.99);
 
         ArrayList<Double> withTax = new ArrayList<Double>();
-        tax(withTax);
+        withTax.addAll(prices.stream()
+            .map((price) -> {
+                return price * 1.13;
+            })
+            .collect(Collectors.toList()));
 
     }
 
