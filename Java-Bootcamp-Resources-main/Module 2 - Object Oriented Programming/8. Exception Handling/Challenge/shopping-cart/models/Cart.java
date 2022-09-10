@@ -36,6 +36,10 @@ public class Cart {
         }
     }
 
+    public boolean isEmpty() {
+        return this.items.isEmpty();
+    }
+
     public String checkout() {
         if (this.items.isEmpty()) {
             throw new IllegalStateException("Cart is empty!");
