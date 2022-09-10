@@ -30,7 +30,7 @@ public class Cart {
             throw new IllegalStateException("Cart is empty!");
         }
         for (int i = 0; i < this.items.size(); i++) {
-            if (this.items.get(i).getName().equals(name)) {
+            if (this.items.get(i).getName().equalsIgnoreCase(name)) {
                 this.items.remove(this.items.get(i));
             }
         }
