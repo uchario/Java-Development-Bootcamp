@@ -17,6 +17,20 @@ public class Store {
         this.movies.set(index, new Movie(movie));
     }
 
+    public void addMovie(Movie movie) {
+        this.movies.add(movie);
+    }
+
+    public boolean contains(Movie movie) {
+        return this.movies.contains(movie);
+    }
+
+    public void sellMovie(String name) {
+        this.movies.removeIf((movie) -> {
+            return movie.getName().equals(name);
+        });
+    }   
+
     public String toString() {
         String temp = "";
         for (int i = 0; i < this.movies.size(); i++) {
