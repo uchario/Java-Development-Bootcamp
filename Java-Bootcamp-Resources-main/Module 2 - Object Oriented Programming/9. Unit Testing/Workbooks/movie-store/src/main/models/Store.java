@@ -1,6 +1,7 @@
 package src.main.models;
 
 import java.util.ArrayList;
+import java.util.stream.*;
 
 public class Store {
     ArrayList<Movie> movies;
@@ -29,7 +30,20 @@ public class Store {
         this.movies.removeIf((movie) -> {
             return movie.getName().equals(name);
         });
-    }   
+    }  
+    
+    public int getMovieIndex(String name) {
+        return IntStream.range(0, this.movies.size())
+            .filter((i) -> {
+                return this.movies.get(i).getName().equals(name);
+            })
+            .findFirst()
+            .orElse(this.movies.size() + 1);
+    }
+
+    public void rentMovie(String name) {
+        this.movies.get(getMovieIndex(name)).setAvailable(false);
+    }
 
     public String toString() {
         String temp = "";
