@@ -17,9 +17,17 @@ public class Cart {
         this.items.set(index, new Item(item));
     }
 
+    public boolean add(Item item) {
+        if (this.items.contains(item)) {
+            return false;
+        }
+        this.items.add(new Item(item));
+        return true;
+    }
 
-
-
+    public boolean contains(Item item) {
+        return this.items.contains(item);  
+    }
     
     public String toString() {
         String temp = "";
