@@ -3,6 +3,7 @@ package src.test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
+import org.junit.Before;
 
 import src.main.Main;
 
