@@ -56,12 +56,11 @@ public class Pants extends Product implements Discountable {
 
     @Override
     public String toString() {
-        return "{" +
-            " waist='" + this.getWaist() + "'" +
-            " brand='" + super.getBrand() + "'" +
-            " color='" + super.getColor() + "'" +
-            " price='" + super.getPrice() + "'" +
-            "}";
+        return "PANTS" +
+            "\t" + this.getWaist() +
+            "\t" + super.getBrand() +
+            "\t" + super.getColor() +
+            "\t" + super.getPrice();
     }
 
 
