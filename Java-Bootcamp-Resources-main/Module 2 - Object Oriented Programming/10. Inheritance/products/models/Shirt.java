@@ -57,12 +57,11 @@ public class Shirt extends Product{
 
     @Override
     public String toString() {
-        return "{" +
-            " size='" + getSize() + "'" +
-            " price='" + super.getPrice() + "'" +
-            " brand='" + super.getBrand() + "'" +
-            " color='" + super.getColor() + "'" +
-            "}";
+        return "SHIRT" +
+            "\t" + getSize() +
+            "\t" + super.getPrice() +
+            "\t" + super.getBrand() + 
+            "\t" + super.getColor();
     }
 
 }
